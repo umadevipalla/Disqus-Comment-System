@@ -1,0 +1,31 @@
+#mainDiv{
+  padding-left: 25px;
+}
+.float-my-children > * {
+  float:left;
+  margin-right:5px;
+}
+.imaget-style {
+  height: 20px;
+  width: 20px;
+}
+.author-name {
+  font-size: small;
+}
+.comment-content {
+  display: flex;
+  flex-direction: column;
+}
+.comment-alignment {
+  margin-left: 25px;
+  font-size: larger;
+}
+.replay-text {
+  margin-left: 25px;
+  font-size: x-small;
+  cursor: pointer;
+}
+.algin-context{
+  display: flex;
+  margin-bottom: 10px;
+}

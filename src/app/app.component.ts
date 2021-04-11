@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommentNode } from './comment-node';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'disqus-comment';
+  comments: Array<CommentNode> = [];
+  constructor() {
+    const image = '../assets/person-icon.png';
+    this.comments =  [new CommentNode('First', 'Uma', image, new Date(), 0, 0)];
+  }
 }

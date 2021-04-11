@@ -1,0 +1,20 @@
+<div id="mainDiv" *ngFor="let comment of comments">
+    <div class="comment-content">
+        <div class="float-my-children">
+            <img [src]="comment.authorImage" class="imaget-style">
+            <span class="author-name">{{comment.autherName}}, {{comment.time | date: "mm-dd-yyyy"}}</span>
+        </div>
+        <div class="comment-alignment">{{comment.text}}</div>   
+        <div class="algin-context">
+            <div class="replay-text" (click)="openCommentText(comment)">Reply</div>
+            <div class="replay-text" (click)="getNumberOfLikes(comment)">like {{comment.numberOfLikes ? comment.numberOfLikes: ''}}</div>
+            <div class="replay-text" (click)="getNumberOfDisLikes(comment)">dislike {{comment.numberOfDisLikes ? comment.numberOfDisLikes: ''}}</div>
+        </div>
+    </div>
+    <div *ngIf="comment.isOpen">
+      <textarea [(ngModel)]="text" cols="80" rows="7"></textarea>
+      <br>
+      <button (click)="addComment(comment)">OK</button>
+    </div>
+    <app-comment-box [comments]="comment.anwsers"></app-comment-box>
+</div>
